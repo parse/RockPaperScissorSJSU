@@ -7,16 +7,19 @@ public class Game {
     final static int AFTER 	= 1;
     
     public static void main(String [] args) {
-    	Human p1 	= new Human();
-    	AI p2 		= new AI();
+    	// Create players
+    	Human human 	= new Human();
+    	AI computer 	= new AI();
 		
-		Throw t1 	= p1.getThrow();
-		Throw t2 	= p2.getThrow();
+    	// Create throws
+		Throw t1 	= human.getThrow();
+		Throw t2 	= computer.getThrow();
 		
+		// Compare
 		if (t1.compareTo(t2) == BEFORE) {
-			System.out.println("Player 1 won with " + t1.toString());
+			System.out.println(human.toString() + " won with " + t1.toString());
 		} else if (t1.compareTo(t2) == AFTER) {
-			System.out.println("Player 2 won with " + t2.toString());
+			System.out.println(computer.toString() + " won with " + t2.toString());
 		} else {
 			System.out.println("Equals with " + t1.toString() );
 		}

@@ -18,4 +18,7 @@ public class Human extends Player {
 		}
 	}
 
+	public String toString() {
+		return "Human player";
+	}
 }

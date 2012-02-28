@@ -17,4 +17,8 @@ public class AI extends Player {
 			return new Scissor(); // To get rid of warning
 		}
 	}
+	
+	public String toString() {
+		return "Computer";
+	}
 }
