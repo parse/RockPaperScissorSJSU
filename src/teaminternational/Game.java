@@ -3,15 +3,15 @@ package teaminternational;
 public class Game {
 	
 	final static int BEFORE = -1;
-    final static int EQUAL 	= 0;
-    final static int AFTER 	= 1;
+	final static int EQUAL 	= 0;
+	final static int AFTER 	= 1;
     
-    public static void main(String [] args) {
-    	// Create players
-    	Human human 	= new Human();
-    	AI computer 	= new AI();
+	public static void main(String [] args) {
+		// Create players
+		Human human 	= new Human();
+		AI computer 	= new AI();
 		
-    	// Create throws
+		// Create throws
 		Throw t1 	= human.getThrow();
 		Throw t2 	= computer.getThrow();
 		
@@ -23,5 +23,5 @@ public class Game {
 		} else {
 			System.out.println("Equals with " + t1.toString() );
 		}
-    }
+	}
 }
