@@ -17,9 +17,9 @@ public class Game {
 		
 		// Compare
 		if (t1.compareTo(t2) == BEFORE) {
-			System.out.println(human.toString() + " won with " + t1.toString());
+			System.out.println(human.toString() + " won with " + t1.toString() + " against " + t2.toString());
 		} else if (t1.compareTo(t2) == AFTER) {
-			System.out.println(computer.toString() + " won with " + t2.toString());
+			System.out.println(computer.toString() + " won with " + t2.toString() + " against " + t1.toString());
 		} else {
 			System.out.println("Equals with " + t1.toString() );
 		}

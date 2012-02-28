@@ -5,7 +5,7 @@ import java.util.Random;
 public class AI extends Player {
 	public Throw getThrow() {
 		Random random = new Random();
-		int pick = random.nextInt(2);
+		int pick = random.nextInt(3);
 		
 		if (pick == 0) {
 			return new Rock();
