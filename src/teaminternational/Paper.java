@@ -13,4 +13,8 @@ public class Paper extends Throw {
 	    	return EQUAL;
 	    }
 	}
+	
+	public String toString() {
+		return "Paper";
+	}
 }

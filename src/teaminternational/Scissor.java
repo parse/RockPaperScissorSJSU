@@ -13,4 +13,8 @@ public class Scissor extends Throw {
 	    	return EQUAL;
 	    }
 	}
+	
+	public String toString() {
+		return "Scissor";
+	}
 }
