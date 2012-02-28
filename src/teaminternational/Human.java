@@ -1,5 +1,5 @@
 package teaminternational;
 
-public class Human {
+public class Human extends Player {
 
 }
