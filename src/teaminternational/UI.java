@@ -53,7 +53,7 @@ public class UI {
 				}
 			}
 			
-			game.endGame();
+			game.endGame(); 
 			System.out.println(game.getStats());
 			
 			// @TODO: Show scores and prompt for what we want to do.
