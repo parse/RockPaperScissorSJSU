@@ -24,41 +24,37 @@ public class UI {
 		Integer mainMenuChoice = ui.getMainMenu();
 		
 		if (mainMenuChoice == 1) {
-			// Start game
 			// Select number of rounds and then prompt for choice
 			Integer nrRounds = ui.getRoundsInput();
 			
-			for (int i = 1; i <= nrRounds; i++) {
-				// Get human throw choice
+			// Start game, attach number of rounds
+			game.newGame(nrRounds);
+			
+			for (int i = 1; i <= nrRounds; i++) {				
+				// Get human throw choice, 1=rock, 2=paper, 3=scissor
 				Integer playerChoice = ui.getPlayerChoice();
 				
-				if (playerChoice == 1) {
-					t1 = new Rock();
-				} else if (playerChoice == 2) {
-					t1 = new Paper();
-				} else if (playerChoice == 3) {
-					t1 = new Scissor();
-				} else {
-					// @TODO: Fix exception
-					t1 = new Scissor(); // Defaults to scissor
-				}
-				
-				// Create computer throw
-				t2 	= computer.getThrow();
+				// Create throws
+				t1 = game.generateThrowFromInput(playerChoice);
+				t2 = computer.getThrow();
 				
 				// Get winner, 1=player 1, 2=player 2, 3=draw
 				int status = game.getWinner(t1, t2);
 				
+				// Update stats
+				game.setWinner(status);
+				
 				if (status == 1) {
 					System.out.println(human.toString() + " won with " + t1.toString() + " against " + t2.toString());
 				} else if (status == 2) {
-					System.out.println(human.toString() + " won with " + t1.toString() + " against " + t2.toString());
+					System.out.println(computer.toString() + " won with " + t2.toString() + " against " + t1.toString());
 				} else if (status == 3) {
 					System.out.println("Equals with " + t1.toString() );
 				}
-				
-				// @TODO: Save statistic for later
 			}
+			
+			game.endGame();
+			System.out.println(game.getStats());
 			
 			// @TODO: Show scores and prompt for what we want to do.
 			//Integer endGameMenu = ui.getGameoverInput();
@@ -83,7 +79,6 @@ public class UI {
 		}
 				
 		return Integer.parseInt( s );
-		
 	}
 	
 	public Integer getPlayerChoice() {
@@ -97,11 +92,8 @@ public class UI {
 			e.printStackTrace();
 		}
 				
-		return Integer.parseInt( s );
-		
+		return Integer.parseInt( s );	
 	}
-	
-	
 	
 	public Integer getRoundsInput() {
 		System.out.println("Enter number of rounds");
@@ -115,7 +107,6 @@ public class UI {
 		}
 				
 		return Integer.parseInt( s );
-		
 	}
 	
 }
