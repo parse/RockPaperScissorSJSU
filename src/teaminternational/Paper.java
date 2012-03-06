@@ -6,9 +6,9 @@ public class Paper extends Throw {
 	    if (t instanceof Paper) {
 	    	return EQUAL;
 	    } else if (t instanceof Scissor) {
-	    	return BEFORE;
-	    } else if (t instanceof Rock) {
 	    	return AFTER;
+	    } else if (t instanceof Rock) {
+	    	return BEFORE;
 	    } else {
 	    	return EQUAL;
 	    }

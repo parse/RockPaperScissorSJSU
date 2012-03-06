@@ -4,11 +4,11 @@ public class Scissor extends Throw {
 	
 	public int compareTo (Throw t) {	    
 	    if (t instanceof Paper) {
-	    	return AFTER;
+	    	return BEFORE;
 	    } else if (t instanceof Scissor) {
 	    	return EQUAL;
 	    } else if (t instanceof Rock) {
-	    	return BEFORE;
+	    	return AFTER;
 	    } else {
 	    	return EQUAL;
 	    }

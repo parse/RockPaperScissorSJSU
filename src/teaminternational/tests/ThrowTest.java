@@ -17,14 +17,14 @@ public class ThrowTest {
 		Throw t1 = new Rock();
 		Throw t2 = new Paper();
 		
-		assertEquals(t1.compareTo(t2), BEFORE); 
+		assertEquals(t1.compareTo(t2), AFTER); 
 	}
 	
 	@Test public void throwScissorPaper() {
 		Throw t1 = new Scissor();
 		Throw t2 = new Paper();
 		
-		assertEquals(t1.compareTo(t2), AFTER); 
+		assertEquals(t1.compareTo(t2), BEFORE); 
 	}
 	
 	@Test public void throwPaperPaper() {
@@ -38,14 +38,14 @@ public class ThrowTest {
 		Throw t1 = new Scissor();
 		Throw t2 = new Rock();
 		
-		assertEquals(t1.compareTo(t2), BEFORE); 
+		assertEquals(t1.compareTo(t2), AFTER); 
 	}
 	
 	@Test public void throwPaperRock() {
 		Throw t1 = new Paper();
 		Throw t2 = new Rock();
 		
-		assertEquals(t1.compareTo(t2), AFTER); 
+		assertEquals(t1.compareTo(t2), BEFORE); 
 	}
 	
 	@Test public void throwRockRock() {
@@ -60,5 +60,12 @@ public class ThrowTest {
 		Throw t2 = new Scissor();
 		
 		assertEquals(t1.compareTo(t2), EQUAL); 
+	}
+	
+	@Test public void throwRockScissor() {
+		Throw t1 = new Rock();
+		Throw t2 = new Scissor();
+		
+		assertEquals(t1.compareTo(t2), BEFORE); 
 	}
 }

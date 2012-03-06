@@ -3,6 +3,7 @@ package teaminternational;
 import java.util.Random;
 
 public class Human extends Player {
+	
 	public Throw getThrow() {
 		Random random = new Random();
 		int pick = random.nextInt(3);
