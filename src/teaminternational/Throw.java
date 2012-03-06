@@ -5,7 +5,7 @@ public class Throw {
     final static int EQUAL = 0;
     final static int AFTER = 1;
     
-	public int compareTo(Throw t2) {
+	public int compareTo(Throw t) {
 		return 0;
 	}
 }
